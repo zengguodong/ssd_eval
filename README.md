@@ -7,20 +7,25 @@
 
 ### Installation
 1. Get the code which mainly evaluates the precision and recall of SSD.
-You can config the parameters to test on the result on different layers and object size.  ```Shell
+You can config the parameters to test on the result on different layers and object size.
+
+  We will call the directory that you cloned ssd_eval into $SSD_EVAL_ROOT
+
+ ```Shell
   git clone https://github.com/zengguodong/ssd_eval.git
   ```
-  We will call the directory that you cloned ssd_eval into `$SSD_EVAL_ROOT`
+
 
 2. Build the code. Please follow [Caffe instruction](http://caffe.berkeleyvision.org/installation.html) to install all necessary packages and build it.
+
   ```Shell
   # Modify Makefile.config according to your Caffe installation.
   cp Makefile.config.example Makefile.config
   make all
   # Make sure to include $SSD_EVAL_ROOT/python to your PYTHONPATH.
   make pycaffe
-  
-  # Compile 
+
+  # Compile blob nms
   cd $SSD_EVAL_ROOT/lib
   make all
   ```
@@ -34,7 +39,7 @@ You can config the parameters to test on the result on different layers and obje
   # Extract the data.
   tar -xvf VOCtest_06-Nov-2007.tar
   ```
-  
+
 2. Download the model 
   ```Shell
 cd  $SSD_EVAL_ROOT
